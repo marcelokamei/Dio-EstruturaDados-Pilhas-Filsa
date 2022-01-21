@@ -51,7 +51,11 @@ public class ListaEncadeada<T> {
     public void validaIndice(int index) {
         if (index >= size()) {
             int ultimoIndice = size() - 1;
-            throw new IndexOutOfBoundsException("Não existe conteúdo no índice " + index + " desta lista. Esta lista só vai até o índice " + ultimoIndice + ".");
+            throw new IndexOutOfBoundsException(
+                    "Não existe conteúdo no índice "
+                            + index +
+                            " desta lista. Esta lista só vai até o índice "
+                            + ultimoIndice + ".");
         }
     }
 
@@ -75,6 +79,14 @@ public class ListaEncadeada<T> {
 
     public boolean isEmpty() {
         return referenciaEntrada == null ? true : false;
+    }
+
+    public No<T> getReferenciaEntrada() {
+        return referenciaEntrada;
+    }
+
+    public void setReferenciaEntrada(No<T> referenciaEntrada) {
+        this.referenciaEntrada = referenciaEntrada;
     }
 
     @Override
